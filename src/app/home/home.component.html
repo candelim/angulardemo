@@ -1,0 +1,52 @@
+<div class="col">
+    <!--<div class="container-fluid">-->
+        <div class="row">
+            <div class="col-auto">
+                <div class="jumbotron" style="background-color: rgb(85, 85, 85)">
+                    <div class="col-auto">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" value="Dispositivo" style="background-color:white " readonly>
+                                    <input type="text" class="form-control" value="Volumen Positivo" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Volumen Negativo" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Presion" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Nivel" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Conductividad" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Caudal" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Fecha" style="background-color: white" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <form *ngFor="let dato of data">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" value="Medidor: {{dato.idMedidor}}" readonly>
+                                        <input type="text" class="form-control" #volpos value="{{dato.volpos}} [m3]" readonly>
+                                        <input type="text" step="any" class="form-control" #volneg value="{{dato.volneg}} [m3]" readonly>
+                                        <input type="text" step="any" class="form-control" #presion value="{{dato.presion}} [kg/cm2]" readonly>
+                                        <input type="text" class="form-control" #nivel value="{{dato.nivel}} [m]" readonly>
+                                        <input type="text" class="form-control" #conductividad value="{{dato.conductividad}} [uS/cm]" readonly>
+                                        <input type="text" class="form-control" #caudal value="{{dato.caudal}} [m3/h]" readonly>
+                                        <input type="text" class="form-control" #fecha value="{{dato.fecha | date:'dd/MM/yyyy HH:mm:ss' }}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn" disabled>
+                                        <div *ngIf="isActive(dato.fecha);then active else pause">
+                                        </div>
+                                        <ng-template #active><span class="oi oi-media-play"></span></ng-template>
+                                        <ng-template #pause><span class="oi oi-media-pause"></span></ng-template>
+                                        <!--<div *ngIf="isActive(dato.fecha)"></div>-->
+                                        <!--<span [ngClass]="isActive(fecha) ? 'oi oi-media-play': 'oi oi-media-pause'"></span>-->
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--></div><-->
+</div>

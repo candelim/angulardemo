@@ -1,0 +1,42 @@
+<div class="col">
+    <div class="container-fluid">	
+        <div class="row">
+            <div class="col-auto">
+                <div class="jumbotron" style="background-color: rgb(85, 85, 85)">
+                    <div class="col-auto">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" value="Dispositivo" style="background-color:white " readonly>
+                                    <input type="text" class="form-control" value="Descripcion" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Latitud" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Longitud" style="background-color: white" readonly>
+                                    <input type="text" class="form-control" value="Direccion" style="background-color: white" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <form *ngFor="let dato of data">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" value="Medidor: {{dato.idMedidor}}" readonly>
+                                        <input type="text" class="form-control" #descripcion value="{{dato.descripcion}}" readonly>
+                                        <input type="number" step="any" class="form-control" #latitud value="{{dato.latitud}}" readonly>
+                                        <input type="number" step="any" class="form-control" #longitud value="{{dato.longitud}}" readonly>
+                                        <input type="text" class="form-control" #direccion value="{{dato.direccion}}" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-primary mb-2" (click)="habilitarEdicion(descripcion, latitud, longitud, direccion, boton)">Editar</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-success mb-2" #boton disabled=true (click)="actualizarMedidor(dato.idMedidor, latitud.value, longitud.value, direccion.value, descripcion.value)">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
