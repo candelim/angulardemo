@@ -1,5 +1,5 @@
 <div class="col">
-    <!--<div class="container-fluid">-->
+    <div class="container-fluid">
         <div class="row">
             <div class="col-auto">
                 <div class="jumbotron" style="background-color: rgb(85, 85, 85)">
@@ -7,7 +7,8 @@
                         <div class="form-row align-items-center">
                             <div class="col-auto">
                                 <div class="input-group mb-2">
-                                    <input type="text" class="form-control" value="Dispositivo" style="background-color:white " readonly>
+                                    <input type="text" class="form-control" value="Usuario" style="background-color:white " readonly>
+									<input type="text" class="form-control" value="Dispositivo" style="background-color:white " readonly>
                                     <input type="text" class="form-control" value="Volumen Positivo" style="background-color: white" readonly>
                                     <input type="text" class="form-control" value="Volumen Negativo" style="background-color: white" readonly>
                                     <input type="text" class="form-control" value="Presion" style="background-color: white" readonly>
@@ -22,6 +23,7 @@
                             <div class="form-row align-items-center">
                                 <div class="col-auto">
                                     <div class="input-group mb-2">
+										<input type="text" class="form-control" value="{{dato.username}}" readonly>
                                         <input type="text" class="form-control" value="Medidor: {{dato.idMedidor}}" readonly>
                                         <input type="text" class="form-control" #volpos value="{{dato.volpos}} [m3]" readonly>
                                         <input type="text" step="any" class="form-control" #volneg value="{{dato.volneg}} [m3]" readonly>
@@ -48,5 +50,5 @@
                 </div>
             </div>
         </div>
-    <!--></div><-->
+    </div>
 </div>

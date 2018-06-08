@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   };
 
   reloadData(){
-    this.http.get('http://192.168.3.76:3000/coordinates').subscribe(data => {	  
+    this.http.get('http://192.168.3.76:3005/coordinates').subscribe(data => {	  
       this.data = data;
       console.log(data);
 	});

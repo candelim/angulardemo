@@ -12,6 +12,7 @@
                                     <input type="text" class="form-control" value="Latitud" style="background-color: white" readonly>
                                     <input type="text" class="form-control" value="Longitud" style="background-color: white" readonly>
                                     <input type="text" class="form-control" value="Direccion" style="background-color: white" readonly>
+									<input type="text" class="form-control" value="Usuario" style="background-color: white" readonly>
                                 </div>
                             </div>
                         </div>
@@ -24,13 +25,14 @@
                                         <input type="number" step="any" class="form-control" #latitud value="{{dato.latitud}}" readonly>
                                         <input type="number" step="any" class="form-control" #longitud value="{{dato.longitud}}" readonly>
                                         <input type="text" class="form-control" #direccion value="{{dato.direccion}}" readonly>
+										<input type="text" class="form-control" #usuario value="{{dato.username}}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-primary mb-2" (click)="habilitarEdicion(descripcion, latitud, longitud, direccion, boton)">Editar</button>
+                                    <button type="button" class="btn btn-primary mb-2" (click)="habilitarEdicion(descripcion, latitud, longitud, direccion, usuario, boton)">Editar</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-success mb-2" #boton disabled=true (click)="actualizarMedidor(dato.idMedidor, latitud.value, longitud.value, direccion.value, descripcion.value)">Enviar</button>
+                                    <button type="button" class="btn btn-success mb-2" #boton disabled=true (click)="actualizarMedidor(dato.idMedidor, latitud.value, longitud.value, direccion.value, descripcion.value, usuario.value)">Enviar</button>
                                 </div>
                             </div>
                         </form>
