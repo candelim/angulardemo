@@ -17,7 +17,7 @@ export class CoordinatesComponent implements OnInit {
     }
   
     reloadData(){
-      this.http.get('http://192.168.3.76:3005/coordinates').subscribe(data => {	  
+      this.http.get('http://192.168.3.76:3006/coordinates').subscribe(data => {	  
         this.data = data;
         console.log(data);
       });
@@ -33,7 +33,7 @@ export class CoordinatesComponent implements OnInit {
 			usuario: usuario
         };
             
-        this.http.post('http://192.168.3.76:3005/coordinates', { params: params })
+        this.http.post('http://192.168.3.76:3006/coordinates', { params: params })
         .subscribe((data) => {
             this.reloadData();
           }, error => {
